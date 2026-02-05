@@ -29,10 +29,10 @@
       position: fixed;
       bottom: 90px; /* 버튼 위 */
       right: 20px;
-      width: 220px;
+      width: 180px; /* 약간 줄임 */
       background: #fbee00;
       color: #3c1e1e;
-      padding: 15px;
+      padding: 12px; /* 약간 줄임 */
       border-radius: 12px;
       box-shadow: 0 4px 15px rgba(0,0,0,0.3);
       display: none;
@@ -40,19 +40,9 @@
       font-family: Arial, sans-serif;
     }
 
-    .kakao-popup h4 {
-      margin: 0 0 10px 0;
-      font-size: 16px;
-    }
-
-    .kakao-popup a {
-      color: #3c1e1e;
-      font-weight: bold;
-      text-decoration: none;
-    }
-
-    .kakao-popup a:hover {
-      text-decoration: underline;
+    .kakao-popup p {
+      margin: 0;
+      font-size: 14px; /* 폰트 사이즈 줄임 */
     }
   </style>
 </head>
@@ -63,9 +53,7 @@
 
   <!-- 팝업 창 -->
   <div class="kakao-popup" id="kakaoPopup">
-    <h4>Contact Me</h4>
-    <p>카카오톡 ID:</p>
-    <a href="https://pf.kakao.com/_YOURCHANNEL" target="_blank">your_kakao_id</a>
+    <p>카카오톡 ID: 臨時</p>
   </div>
 
   <script>
