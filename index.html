@@ -1,1 +1,91 @@
-123
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>카카오톡 UI 예제</title>
+  <style>
+    /* 오른쪽 하단 텍스트 버튼 */
+    .kakao-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #fbee00;
+      color: #3c1e1e;
+      font-weight: bold;
+      padding: 10px 15px;
+      border-radius: 20px;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      z-index: 1000;
+      transition: transform 0.2s;
+      font-family: Arial, sans-serif;
+    }
+
+    .kakao-button:hover {
+      transform: scale(1.1);
+    }
+
+    /* 팝업 창 */
+    .kakao-popup {
+      position: fixed;
+      bottom: 60px; /* 버튼 위에 표시 */
+      right: 20px;
+      width: 220px;
+      background: #fbee00;
+      color: #3c1e1e;
+      padding: 15px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+      display: none;
+      z-index: 1000;
+      font-family: Arial, sans-serif;
+    }
+
+    .kakao-popup h4 {
+      margin: 0 0 10px 0;
+      font-size: 16px;
+    }
+
+    .kakao-popup a {
+      color: #3c1e1e;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .kakao-popup a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 화면 오른쪽 하단 카카오톡 글자 버튼 -->
+  <div class="kakao-button" id="kakaoBtn">카카오톡</div>
+
+  <!-- 팝업 -->
+  <div class="kakao-popup" id="kakaoPopup">
+    <h4>Contact Me</h4>
+    <p>카카오톡 ID:</p>
+    <a href="https://pf.kakao.com/_YOURCHANNEL" target="_blank">your_kakao_id</a>
+  </div>
+
+  <script>
+    const kakaoBtn = document.getElementById('kakaoBtn');
+    const kakaoPopup = document.getElementById('kakaoPopup');
+
+    // 버튼 클릭 시 팝업 열기/닫기
+    kakaoBtn.addEventListener('click', () => {
+      kakaoPopup.style.display = kakaoPopup.style.display === 'block' ? 'none' : 'block';
+    });
+
+    // 버튼 외부 클릭 시 팝업 닫기
+    document.addEventListener('click', (e) => {
+      if (!kakaoBtn.contains(e.target) && !kakaoPopup.contains(e.target)) {
+        kakaoPopup.style.display = 'none';
+      }
+    });
+  </script>
+
+</body>
+</html>
